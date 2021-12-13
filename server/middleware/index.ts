@@ -1,16 +1,15 @@
-import express, {Request, Response} from 'express'
+import express, { Request, Response } from "express";
 
-const app = express()
+const app = express();
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true}))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/test', (req:Request, res:Response) => {
+app.get("/api/v1/test", (req: Request, res: Response) => {
+  return res.json({
+    message: "hello from server",
+    code: "12300",
+  });
+});
 
-    return res.json({
-        message: "hello from server",
-        code: "12300"
-    })
-})
-
-export default app
+export default app;
