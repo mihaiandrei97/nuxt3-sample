@@ -8,7 +8,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   async setup() {
-    const {data: { value:data }} =  await useFetch('http://localhost:3000/server-middleware/api/v1/test', { pick: ['message', 'data'] })
+    const {data: { value:data }} =  await useFetch('http://localhost:3000/server-middleware/api/v1/test')
     return { data}
   },
 
