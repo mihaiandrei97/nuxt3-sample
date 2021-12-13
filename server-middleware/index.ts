@@ -1,15 +1,9 @@
 import express, { Request, Response } from "express";
-
+import api from "./api";
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-app.get("/api/v1/test", (req: Request, res: Response) => {
-  return res.json({
-    message: "hello from server",
-    code: "12300",
-  });
-});
+app.use("/api/v1", api);
 
 export default app;
